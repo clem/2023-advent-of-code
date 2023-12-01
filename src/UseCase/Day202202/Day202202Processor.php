@@ -12,33 +12,17 @@ final class Day202202Processor implements DayProcessorInterface
     {
         return array_sum(
             array_map(
-                static function (string $round) {
-                    if (empty($round)) {
-                        return 0;
-                    }
-
-                    list($elfMove, $userMove) = explode(' ', $round);
-
-                    return RockPaperScissorsGameHandler::handleRoundMoves($elfMove, $userMove);
-                },
+                fn (string $round) => RockPaperScissorsGameHandler::handleRoundMoves($round),
                 explode("\n", $input)
             )
         );
     }
 
-    public function processPartTwo(string $input): mixed
+    public function processPartTwo(string $input): int
     {
         return array_sum(
             array_map(
-                static function (string $round) {
-                    if (empty($round)) {
-                        return 0;
-                    }
-
-                    list($elfMove, $roundEnd) = explode(' ', $round);
-
-                    return RockPaperScissorsGameHandler::handleRoundEnd($elfMove, $roundEnd);
-                },
+                fn (string $round) => RockPaperScissorsGameHandler::handleRoundEnd($round),
                 explode("\n", $input)
             )
         );
