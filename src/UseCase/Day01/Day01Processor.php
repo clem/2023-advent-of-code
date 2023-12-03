@@ -14,7 +14,6 @@ final class Day01Processor implements DayProcessorInterface
             $input,
             [NumbersExtractor::class, 'extractFirstAndLastNumbersFromString']
         );
-
     }
 
     public function processPartTwo(string $input): int
