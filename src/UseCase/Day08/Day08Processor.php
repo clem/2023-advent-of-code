@@ -15,7 +15,7 @@ final class Day08Processor implements DayProcessorInterface
     public function __construct()
     {
         $this->wastelandMapsParser = new WastelandMapsParser();
-        $this->wastelandSequenceHandler = new WasteLandSequenceHandler();
+        $this->wastelandSequenceHandler = new WastelandSequenceHandler();
     }
 
     public function processPartOne(string $input): int
